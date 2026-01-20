@@ -25,15 +25,8 @@
       --accent-hover: #ffed4e;
       --border: rgba(255, 255, 255, 0.1);
     }
-
-    * {
-      scroll-behavior: smooth;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg-dark);
@@ -41,322 +34,59 @@
       position: relative;
       overflow-x: hidden;
     }
-
     /* Hero Section */
-    .hero-container {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 10;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 2rem;
-      width: 100%;
-    }
-
-    @media (min-width: 1024px) {
-      .hero-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-        padding: 4rem 2rem;
-      }
-    }
-
-    .hero-text {
-      z-index: 20;
-    }
-
-    .hero-text h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.02em;
-    }
-
-    @media (max-width: 768px) {
-      .hero-text h1 {
-        font-size: 2.5rem;
-      }
-    }
-
-    .hero-text .accent-yellow {
-      color: var(--accent-yellow);
-    }
-
-    .hero-subtitle {
-      font-size: 1.25rem;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-image-container {
-      position: relative;
-      height: 500px;
-      z-index: 15;
-    }
-
-    @media (max-width: 1024px) {
-      .hero-image-container {
-        height: 350px;
-        margin-top: 3rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .hero-image-container {
-        height: 300px;
-        margin-top: 2rem;
-      }
-    }
-
-    .hero-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 1rem;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Fade overlay for image */
-    .hero-image-container::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(to right, rgba(15, 15, 15, 1), transparent);
-      pointer-events: none;
-      border-radius: 1rem;
-    }
-
-    @media (max-width: 1024px) {
-      .hero-image-container::after {
-        background: linear-gradient(to bottom, rgba(15, 15, 15, 1), transparent);
-      }
-    }
+    .hero-container { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
+    .hero-content { position: relative; z-index: 10; max-width: 1400px; margin: 0 auto; padding: 2rem; width: 100%; }
+    @media (min-width: 1024px) { .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; padding: 4rem 2rem; } }
+    .hero-text { z-index: 20; }
+    .hero-text h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+    @media (max-width: 768px) { .hero-text h1 { font-size: 2.5rem; } }
+    .hero-text .accent-yellow { color: var(--accent-yellow); }
+    .hero-subtitle { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6; }
+    .hero-cta { display: flex; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
+    .hero-image-container { position: relative; height: 500px; z-index: 15; }
+    @media (max-width: 1024px) { .hero-image-container { height: 350px; margin-top: 3rem; } }
+    @media (max-width: 768px) { .hero-image-container { height: 300px; margin-top: 2rem; } }
+    .hero-image { width: 100%; height: 100%; object-fit: cover; border-radius: 1rem; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+    .hero-image-container::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to right, rgba(15, 15, 15, 1), transparent); pointer-events: none; border-radius: 1rem; }
+    @media (max-width: 1024px) { .hero-image-container::after { background: linear-gradient(to bottom, rgba(15, 15, 15, 1), transparent); } }
 
     /* Navigation */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(15, 15, 15, 0.8);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    nav {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .nav-logo .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent-yellow);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-size: 0.95rem;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent-yellow);
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-    }
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(15, 15, 15, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+    nav { max-width: 1400px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-weight: 700; font-size: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+    .nav-logo .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-yellow); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; transition: all 0.3s ease; font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--accent-yellow); }
+    @media (max-width: 768px) { .nav-links { display: none; } }
 
     /* Buttons */
-    .btn-primary {
-      padding: 0.875rem 2.5rem;
-      border-radius: 9999px;
-      background: var(--accent-yellow);
-      color: var(--bg-dark);
-      font-weight: 600;
-      transition: all 0.3s ease;
-      border: 2px solid var(--accent-yellow);
-      cursor: pointer;
-      display: inline-block;
-      text-decoration: none;
-      font-size: 1rem;
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      border-color: var(--accent-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
-    }
-
-    .btn-secondary {
-      padding: 0.875rem 2.5rem;
-      border-radius: 9999px;
-      background: transparent;
-      color: var(--text-light);
-      font-weight: 600;
-      transition: all 0.3s ease;
-      border: 2px solid var(--text-light);
-      cursor: pointer;
-      display: inline-block;
-      text-decoration: none;
-      font-size: 1rem;
-    }
-
-    .btn-secondary:hover {
-      background: var(--text-light);
-      color: var(--bg-dark);
-      transform: translateY(-2px);
-    }
+    .btn-primary { padding: 0.875rem 2.5rem; border-radius: 9999px; background: var(--accent-yellow); color: var(--bg-dark); font-weight: 600; transition: all 0.3s ease; border: 2px solid var(--accent-yellow); cursor: pointer; text-decoration: none; font-size: 1rem; }
+    .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3); }
+    .btn-secondary { padding: 0.875rem 2.5rem; border-radius: 9999px; background: transparent; color: var(--text-light); font-weight: 600; transition: all 0.3s ease; border: 2px solid var(--text-light); cursor: pointer; text-decoration: none; font-size: 1rem; }
+    .btn-secondary:hover { background: var(--text-light); color: var(--bg-dark); transform: translateY(-2px); }
 
     /* Sections */
-    section {
-      padding: 5rem 2rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 3rem;
-      position: relative;
-      display: inline-block;
-      letter-spacing: -0.02em;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -1rem;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background: var(--accent-yellow);
-      border-radius: 2px;
-    }
+    section { padding: 5rem 2rem; max-width: 1400px; margin: 0 auto; }
+    .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 3rem; position: relative; display: inline-block; letter-spacing: -0.02em; }
+    .section-title::after { content: ''; position: absolute; bottom: -1rem; left: 0; width: 60px; height: 4px; background: var(--accent-yellow); border-radius: 2px; }
 
     /* Cards */
-    .card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 1rem;
-      padding: 2rem;
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      border-color: var(--accent-yellow);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(255, 215, 0, 0.1);
-    }
+    .card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 1rem; padding: 2rem; transition: all 0.3s ease; }
+    .card:hover { border-color: var(--accent-yellow); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(255, 215, 0, 0.1); }
 
     /* Skills */
-    .skill-bar {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 9999px;
-      overflow: hidden;
-      height: 8px;
-      margin: 0.75rem 0;
-    }
-
-    .skill-fill {
-      background: linear-gradient(90deg, var(--accent-yellow), #ffed4e);
-      height: 100%;
-      border-radius: 9999px;
-      animation: fillSkill 1.5s ease-out;
-    }
-
-    @keyframes fillSkill {
-      from {
-        width: 0;
-      }
-    }
+    .skill-bar { background: rgba(255, 255, 255, 0.05); border-radius: 9999px; overflow: hidden; height: 8px; margin: 0.75rem 0; }
+    .skill-fill { background: linear-gradient(90deg, var(--accent-yellow), #ffed4e); height: 100%; border-radius: 9999px; animation: fillSkill 1.5s ease-out; }
+    @keyframes fillSkill { from { width: 0; } }
 
     /* Social Links */
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+    .social-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .social-link { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255, 255, 255, 0.1); border: 2px solid var(--border); transition: all 0.3s ease; text-decoration: none; color: var(--text-light); font-size: 1.1rem; }
+    .social-link:hover { background: var(--accent-yellow); color: var(--bg-dark); border-color: var(--accent-yellow); transform: translateY(-4px); }
 
-    .social-link {
-      width: 45px;
-      height: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid var(--border);
-      transition: all 0.3s ease;
-      text-decoration: none;
-      color: var(--text-light);
-      font-size: 1.1rem;
-    }
-
-    .social-link:hover {
-      background: var(--accent-yellow);
-      color: var(--bg-dark);
-      border-color: var(--accent-yellow);
-      transform: translateY(-4px);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      section {
-        padding: 3rem 1.5rem;
-      }
-
-      .section-title {
-        font-size: 2rem;
-      }
-    }
+    @media (max-width: 768px) { section { padding: 3rem 1.5rem; } .section-title { font-size: 2rem; } }
   </style>
 </head>
 
@@ -385,43 +115,41 @@
           Hello, I'm <span class="accent-yellow">Julien</span>
         </h1>
         <p class="hero-subtitle">
-          Apiring Backend and AI Engineer specializing in scalable systems and intelligent solutions. Building the future, one algorithm at a time.
+          Backend & AI Engineer | Building scalable systems and AI-driven solutions. Passionate about leveraging technology to solve real-world problems.
         </p>
         <div class="hero-cta">
           <a href="#contact" class="btn-primary">Get In Touch</a>
           <a href="#projects" class="btn-secondary">View My Work</a>
         </div>
         <div class="social-links">
-          <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/julien-glory-manana" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Julien-G-Man" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
           <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="mailto:juliengmanana@gmail.com" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
 
       <div class="hero-image-container">
-        <img src="julien.jpg" alt="Profile" class="hero-image">
+        <img src="julien.jpg" alt="Julien Glory Manana" class="hero-image">
       </div>
     </div>
   </section>
 
   <!-- About Section -->
   <section id="about" style="background: var(--bg-secondary);">
-    <div class="max-w-1400">
-      <h2 class="section-title">About Me</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-        <div class="card">
-          <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent-yellow);">Background</h3>
-          <p style="color: var(--text-muted); line-height: 1.8;">
-            I'm a passionate backend engineer with a deep interest in artificial intelligence and scalable systems. With years of experience building robust APIs and microservices, I've developed a keen eye for clean code and efficient architecture.
-          </p>
-        </div>
-        <div class="card">
-          <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent-yellow);">Expertise</h3>
-          <p style="color: var(--text-muted); line-height: 1.8;">
-            I specialize in Python, Django, FastAPI and LLMs. I build AI powered products.
-          </p>
-        </div>
+    <h2 class="section-title">About Me</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+      <div class="card">
+        <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent-yellow);">Background</h3>
+        <p style="color: var(--text-muted); line-height: 1.8;">
+          I'm Julien Glory Manana from the Republic of Congo, currently pursuing a BSc in Computer Science at KNUST, Ghana. I am passionate about backend development, AI, and machine learning, aiming to architect intelligent systems and build impactful tech solutions.
+        </p>
+      </div>
+      <div class="card">
+        <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent-yellow);">Experience & Leadership</h3>
+        <p style="color: var(--text-muted); line-height: 1.8;">
+          I serve as International Relations Officer for the Science Students Association (SCISA) at KNUST, and the Deputy Tech Lead at Enactus KNUST, where I contribute to initiatives and projects focused on social impact. My experience spans building AI-powered applications to deliver scalable, real-world solutions.
+        </p>
       </div>
     </div>
   </section>
@@ -438,7 +166,7 @@
           <h3 style="font-size: 1.3rem; font-weight: 600;">Lamla AI</h3>
         </div>
         <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
-          AI-powered leanring platform
+          AI-powered learning assistant for students, generating quizzes, flashcards, and personalized study recommendations to optimize revision.
         </p>
         <a href="https://lamla-ai.onrender.com" style="color: var(--accent-yellow); text-decoration: none; font-weight: 600;">Visit Site →</a>
       </div>
@@ -451,7 +179,7 @@
           <h3 style="font-size: 1.3rem; font-weight: 600;">Tena AI</h3>
         </div>
         <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
-          Conversational AI platform enabling woman-rights education through natural language interactions
+          Conversational AI platform empowering women with rights education through natural language interactions and intelligent guidance.
         </p>
         <a href="https://tenaaai.vercel.app" style="color: var(--accent-yellow); text-decoration: none; font-weight: 600;">Visit Site →</a>
       </div>
@@ -464,71 +192,38 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
       <div>
         <h3 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.1rem;">Backend</h3>
-        <div>
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-            <span style="font-size: 0.95rem;">Python</span>
-            <span style="color: var(--accent-yellow); font-size: 0.95rem;">72%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;"><span>Python</span><span style="color: var(--accent-yellow);">92%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div>
 
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; margin-top: 1.5rem;">
-            <span style="font-size: 0.95rem;">Django</span>
-            <span style="color: var(--accent-yellow); font-size: 0.95rem;">60%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; margin-top: 1.5rem;"><span>Django</span><span style="color: var(--accent-yellow);">88%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
 
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; margin-top: 1.5rem;">
-            <span style="font-size: 0.95rem;">FastAPI</span>
-            <span style="color: var(--accent-yellow); font-size: 0.95rem;">65%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" style="width: 75%;"></div></div>
-        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; margin-top: 1.5rem;"><span>FastAPI</span><span style="color: var(--accent-yellow);">80%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div>
       </div>
 
       <div>
-        <h3 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.1rem;">LLMs</h3>
-        <div>
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-            <span style="font-size: 0.95rem;">LLMs</span>
-            <span style="color: var(--accent-yellow); font-size: 0.95rem;">65%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+        <h3 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.1rem;">AI & LLMs</h3>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;"><span>LLMs</span><span style="color: var(--accent-yellow);">85%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
 
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; margin-top: 1.5rem;">
-            <span style="font-size: 0.95rem;">Azure OpenAI</span>
-            <span style="color: var(--accent-yellow); font-size: 0.95rem;">82%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" style="width: 82%;"></div></div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; margin-top: 1.5rem;"><span>Azure OpenAI</span><span style="color: var(--accent-yellow);">82%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width: 82%;"></div></div>
 
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; margin-top: 1.5rem;">
-            <span style="font-size: 0.95rem;">RAG</span>
-            <span style="color: var(--accent-yellow); font-size: 0.95rem;">60%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div>
-        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; margin-top: 1.5rem;"><span>RAG Systems</span><span style="color: var(--accent-yellow);">80%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div>
       </div>
 
       <div>
         <h3 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.1rem;">Deployment</h3>
-        <div>
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-            <span style="font-size: 0.95rem;">Render</span>
-            <span style="color: var(--accent-yellow); font-size: 0.95rem;">90%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;"><span>Render</span><span style="color: var(--accent-yellow);">90%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
 
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; margin-top: 1.5rem;">
-            <span style="font-size: 0.95rem;">Vercel</span>
-            <span style="color: var(--accent-yellow); font-size: 0.95rem;">80%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; margin-top: 1.5rem;"><span>Vercel</span><span style="color: var(--accent-yellow);">88%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
 
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; margin-top: 1.5rem;">
-            <span style="font-size: 0.95rem;">Netlify</span>
-            <span style="color: var(--accent-yellow); font-size: 0.95rem;">88%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" style="width: 78%;"></div></div>
-        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; margin-top: 1.5rem;"><span>Netlify</span><span style="color: var(--accent-yellow);">78%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width: 78%;"></div></div>
       </div>
     </div>
   </section>
@@ -540,7 +235,7 @@
       <div>
         <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem;">Let's Connect</h3>
         <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">
-          I'm always open to new opportunities, collaborations, and interesting conversations. Feel free to reach out and let's create something amazing together.
+          I’m open to collaborations, mentorship discussions, or new projects. Reach out and let's create impactful technology together.
         </p>
         <div class="social-links" style="margin-top: 2rem;">
           <a href="https://linkedin.com/in/julien-glory-manana" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -553,15 +248,15 @@
       <div class="card">
         <div style="margin-bottom: 1.5rem;">
           <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Name</label>
-          <input type="text" placeholder="Your name" style="width: 100%; padding: 0.75rem; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); border-radius: 0.5rem; color: var(--text-light); outline: none; transition: all 0.3s;">
+          <input type="text" placeholder="Your name" style="width: 100%; padding: 0.75rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 0.5rem; color: var(--text-light); outline: none;">
         </div>
         <div style="margin-bottom: 1.5rem;">
           <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email</label>
-          <input type="email" placeholder="your@email.com" style="width: 100%; padding: 0.75rem; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); border-radius: 0.5rem; color: var(--text-light); outline: none; transition: all 0.3s;">
+          <input type="email" placeholder="your@email.com" style="width: 100%; padding: 0.75rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 0.5rem; color: var(--text-light); outline: none;">
         </div>
         <div style="margin-bottom: 2rem;">
           <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message</label>
-          <textarea placeholder="Your message..." rows="4" style="width: 100%; padding: 0.75rem; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); border-radius: 0.5rem; color: var(--text-light); outline: none; resize: none; transition: all 0.3s;"></textarea>
+          <textarea placeholder="Your message..." rows="4" style="width: 100%; padding: 0.75rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 0.5rem; color: var(--text-light); outline: none; resize: none;"></textarea>
         </div>
         <button class="btn-primary" style="width: 100%;">Send Message</button>
       </div>
@@ -575,8 +270,6 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Smooth scroll for navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
